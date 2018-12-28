@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <h1>About Us</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- ส่วนการแสดงรายละเอียดส่วนตัว -->
+
+  <ion-card>
+    <ion-card-header>
+      <h1>
+        <ion-icon name="md-contact" item-start large></ion-icon>
+      </h1>
+    </ion-card-header>
+    <ion-card-content>
+      <h2>{{code}}</h2>
+      <h2>{{name}}</h2>
+      <p>{{email}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-item>
+
+
+    </ion-item>
+  </ion-card>
+  <!-- ส่วนแสดงรายละเอียดการศึกษา -->
+  <ion-card>
+    <ion-item>
+      <ion-icon name="school" item-start large></ion-icon>
+      <h2>{{edu.major}} {{edu.faculty}}</h2>
+      <p>{{edu.university}}</p>
+    </ion-item>
+  </ion-card>
+  <!-- // ส่วนการเพิ่ม skill -->
+  <ion-card>
+
+  </ion-card>
+
+  <!-- // ส่วนการแสดง skill -->
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (submit)="addSkill(skill.value)">
+        <ion-item>
+          <ion-icon name="book" item-start large></ion-icon>
+          <ion-label fixed>Add Skill</ion-label>
+          <ion-input type="text" value="" #skill></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button color="secondary" full type="submit">Add</button> 
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-list>
+    <button ion-item *ngFor="let skill of skills,let i = index">
+      {{(i+1)}}. {{skill}}
+      <div class="item-note" item-end>
+        <ion-icon name="md-trash" item-start (click)="removeSkill(skill)"></ion-icon>
+      </div>
+    </button>
+  </ion-list>
+
+</ion-content>

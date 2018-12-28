@@ -1,0 +1,13 @@
+<h1>Product Lists</h1><hr>
+<table border="1" width = "80%">
+<tr>
+<th>ลำดับ</th>
+<th>ชื่อสินค้า</th>
+<th>ราคา</th>
+</tr>
+<tr *ngFor="let product of productLists;let i = index">
+<td>{{i+1}}</td>
+<td>{{product.name}}</td>
+<td>{{product.price}}</td>
+</tr>
+</table>
